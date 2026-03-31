@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # D2024092929287 项目说明
 
 本项目是一个基于 Python 的数据分析与建模项目，围绕房地产数据预处理、城市服务设施空间分布分析，以及房价/住房相关指标预测开展。项目包含原始数据、清洗脚本、建模脚本和结果文件。
@@ -165,3 +166,6 @@ pip install pandas numpy scikit-learn matplotlib seaborn scipy geopandas shapely
 - `House Price Prediction Results/房价预测结果/`
 
 可用于后续报告撰写、图表复现与模型结果对比。
+=======
+# D2024092929287
+>>>>>>> 320752fb5391dd4e33ce79f68d7683b18345edef
