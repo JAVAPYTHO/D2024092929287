@@ -1,46 +1,42 @@
-<<<<<<< HEAD
-# D2024092929287 项目说明
+# D2024092929287
 
-本项目是一个基于 Python 的数据分析与建模项目，围绕房地产数据预处理、城市服务设施空间分布分析，以及房价/住房相关指标预测开展。项目包含原始数据、清洗脚本、建模脚本和结果文件。
+基于“数维杯”赛题的数据分析与建模项目，面向两个城市（City 1 / City 2）完成：
 
-## 1. 项目做了什么
+- 房价与住房相关指标预测
+- 城市服务体系量化评估
+- 城市韧性与可持续能力评估
+- 综合投资与发展建议
 
-从代码结构和脚本逻辑来看，项目主要完成了以下工作：
+## 项目概览
 
-1. **数据预处理（Data Preprocessing）**
-   - 读取 `Appendix 1.xlsx` 和 `Appendix 2.xlsx`。
-   - 对数值型字段进行提取与标准化（如处理区间值、字符串数值）。
-   - 对缺失值进行填补（中位数、众数等策略）。
-   - 生成清洗后的数据文件（如 `Processed_Appendix_1.xlsx`、`Processed_Appendix_2.xlsx`）。
+本项目对应论文 `D2024092929287.pdf` 的 4 个问题，代码与结果文件已按题目拆分：
 
-2. **问题一（question1）：住房/房价相关建模分析**
-   - 进行缺失值分析、经纬度清洗、车位字段解析。
-   - 使用 `KNNImputer` 做缺失值插补。
-   - 使用 Spearman 相关系数与 RFE 进行特征筛选。
-   - 建立并评估多种回归模型：
-     - 线性回归（Linear Regression）
-     - 随机森林回归（Random Forest Regressor）
-     - 梯度提升回归（Gradient Boosting Regressor）
-   - 使用交叉验证输出模型泛化效果，并可视化预测对比、残差图、Q-Q 图。
+1. **Question 1：房价预测与住房估算**
+   - 数据清洗、缺失值填补、特征工程
+   - 多模型回归对比（线性回归 / 随机森林 / 梯度提升 / 决策树）
+   - 模型评估与可视化（R²、残差、Q-Q 图等）
 
-3. **问题二（question2）：城市公共服务设施与韧性分析**
-   - 读取多类城市 POI/设施 CSV 数据（交通、医疗、公共设施、生活服务等）。
-   - 进行编码兼容读取（UTF-8 / ISO-8859-1 / GBK）、去重、缺失值处理。
-   - 进行地理空间转换（`GeoPandas` + `Shapely`），按城市边界计算设施密度。
-   - 生成散点分布图、柱状图、雷达图、密度指数相关结果。
+2. **Question 2：城市服务系统评估**
+   - 15 类服务行业数据统计与对比
+   - 综合评分（MCE 思路）
+   - 柱状图、雷达图、服务密度等可视化
 
-4. **问题三（question3）及结果整理**
-   - 包含后续问题分析脚本（如 `q3.py`、`q3_2.py`、`q4.py`）。
-   - 输出结果汇总在 `House Price Prediction Results/房价预测结果` 中，含多模型结果 Excel 文件。
+3. **Question 3：城市韧性评估**
+   - 基于交通、医疗、公共设施等指标构建综合评估
+   - 识别薄弱环节并形成改进方向
+
+4. **Question 4：综合策略建议**
+   - 结合前 3 问结论，给出投资重点与优化建议
 
 ---
 
-## 2. 目录结构（核心）
+## 目录结构
 
 ```text
 D2024092929287/
 ├─ D2024092929287.pdf
 ├─ README.md
+├─ requirements.txt
 ├─ House Price Prediction Results/
 │  └─ 房价预测结果/
 │     ├─ city_1.xlsx
@@ -63,64 +59,42 @@ D2024092929287/
 
 ---
 
-## 3. 运行环境
+## 环境要求
 
-建议 Python 版本：`3.9+`
+- Python 3.9+
+- 建议使用虚拟环境（venv/conda）
 
-主要依赖（按脚本实际导入汇总）：
-
-- `pandas`
-- `numpy`
-- `scikit-learn`
-- `matplotlib`
-- `seaborn`
-- `scipy`
-- `geopandas`
-- `shapely`
-- `openpyxl`
-
-安装示例：
+安装依赖：
 
 ```bash
-pip install pandas numpy scikit-learn matplotlib seaborn scipy geopandas shapely openpyxl
+pip install -r requirements.txt
 ```
 
 ---
 
-## 4. 运行说明
+## 快速开始
 
-> 注意：部分脚本中存在硬编码路径（如 `F:/pythonProject/...`、`pathToAppendix1.xlsx`），运行前请先改成本机实际路径。
+### 1) 数据预处理
 
-### 4.1 数据预处理
+目录：`Python Code and data/Python Code and data/Data Preprocessing/`
 
-进入：
-
-- `Python Code and data/Python Code and data/Data Preprocessing/`
-
-运行：
-
+可运行脚本：
 - `Appendix1 and Appendix2 Missing Value and Outlier Handling.py`
 - `Appendix1 and Appendix2 Boxplot.py`
 
-### 4.2 question1 建模分析
+### 2) Question1 建模
 
-进入：
+目录：`Python Code and data/Python Code and data/question1/`
 
-- `Python Code and data/Python Code and data/question1/`
+核心脚本：
+- `Q1_1.py`
+- `01.py`
 
-运行：
+### 3) Question2 服务分析
 
-- `Q1_1.py`（核心建模脚本）
-- `01.py`（辅助脚本）
+目录：`Python Code and data/Python Code and data/question2/Python code/`
 
-### 4.3 question2 城市设施分析
-
-进入：
-
-- `Python Code and data/Python Code and data/question2/Python code/`
-
-按需求运行脚本（例如）：
-
+常用脚本：
 - `Calculate the total number of services.py`
 - `city scores.py`
 - `Service density of two cities.py`
@@ -129,43 +103,26 @@ pip install pandas numpy scikit-learn matplotlib seaborn scipy geopandas shapely
 - `Draw bar chart of service quantities.py`
 - `Draw radar chart.py`
 
-### 4.4 question3 脚本
+### 4) Question3 / Question4 相关脚本
 
-进入：
+目录：`Python Code and data/Python Code and data/question3/`
 
-- `Python Code and data/Python Code and data/question3/`
-
-运行：
-
+可运行脚本：
 - `q3.py`
 - `q3_2.py`
 - `q4.py`
 
 ---
 
-## 5. 当前代码特点与建议
-
-### 已完成特点
-
-- 覆盖数据预处理、特征工程、模型训练、可视化、空间分析完整流程。
-- 采用多模型对比与交叉验证，具备一定实验严谨性。
-
-### 可改进点
-
-1. 建议将硬编码路径改为相对路径或配置文件。
-2. 建议补充统一入口脚本（如 `main.py`）与参数化运行方式。
-3. 建议增加 `requirements.txt` 便于复现。
-4. 建议将中英文命名与路径风格统一，提高可维护性。
-
----
-
-## 6. 结果文件位置
+## 结果文件
 
 主要输出位于：
 
 - `House Price Prediction Results/房价预测结果/`
 
-可用于后续报告撰写、图表复现与模型结果对比。
-=======
-# D2024092929287
->>>>>>> 320752fb5391dd4e33ce79f68d7683b18345edef
+---
+
+## 注意事项
+
+- 部分脚本包含硬编码路径（如 `F:/...` 或占位路径），运行前请改为本机路径。
+- 中英文路径混用较多，建议统一路径命名以提升复现稳定性。
