@@ -171,9 +171,39 @@ D2024092929287/
 pip install -r requirements.txt
 ```
 
+### 三步快速复现
+
+```bash
+# 1) 安装依赖
+pip install -r requirements.txt
+
+# 2) 运行单个任务（示例：Q2）
+python main.py --task q2
+
+# 3) 查看输出结果
+# House Price Prediction Results/房价预测结果/
+# Python Code and data/Python Code and data/question2/The generated images and files/
+```
+
 ---
 
 ## 七、运行说明
+
+### 统一入口（推荐）
+
+```bash
+# 只跑 Q1
+python main.py --task q1
+
+# 只跑 Q2
+python main.py --task q2
+
+# 只跑 Q3
+python main.py --task q3
+
+# 全部串行执行
+python main.py --task all
+```
 
 ### 1）数据预处理
 
@@ -229,6 +259,12 @@ pip install -r requirements.txt
 
 ---
 
-## 十、仓库链接
+## 十、结果索引（核心）
+
+- 房价模型输出：`House Price Prediction Results/房价预测结果/`
+- Q2 图表输出：`Python Code and data/Python Code and data/question2/The generated images and files/`
+- Q3 数据输入：`Python Code and data/Python Code and data/question3/Appendix 3/` 与 `Appendix 4/`
+
+## 十一、仓库链接
 
 - GitHub: https://github.com/JAVAPYTHO/D2024092929287

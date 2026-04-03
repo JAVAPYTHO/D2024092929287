@@ -167,9 +167,39 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+### 3-step Quick Reproduction
+
+```bash
+# 1) Install dependencies
+pip install -r requirements.txt
+
+# 2) Run one task (example: Q2)
+python main.py --task q2
+
+# 3) Check outputs
+# House Price Prediction Results/房价预测结果/
+# Python Code and data/Python Code and data/question2/The generated images and files/
+```
+
 ---
 
 ## 7. How to Run
+
+### Unified Runner (Recommended)
+
+```bash
+# Run only Q1
+python main.py --task q1
+
+# Run only Q2
+python main.py --task q2
+
+# Run only Q3
+python main.py --task q3
+
+# Run all tasks in sequence
+python main.py --task all
+```
 
 ### 1) Data Preprocessing
 
@@ -222,6 +252,12 @@ Directory: `Python Code and data/Python Code and data/question3/`
 
 ---
 
-## 10. Repository
+## 10. Output Index (Core)
+
+- Housing model outputs: `House Price Prediction Results/房价预测结果/`
+- Q2 figures: `Python Code and data/Python Code and data/question2/The generated images and files/`
+- Q3 input folders: `Python Code and data/Python Code and data/question3/Appendix 3/` and `Appendix 4/`
+
+## 11. Repository
 
 - GitHub: https://github.com/JAVAPYTHO/D2024092929287
